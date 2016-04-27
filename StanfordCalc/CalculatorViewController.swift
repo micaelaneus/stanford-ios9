@@ -13,10 +13,17 @@ class CalculatorViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
 
+    private var userTyping = false
+
     @IBAction func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
-        let currentDisplayText = display.text!
-        display.text = currentDisplayText + digit
+        if userTyping {
+            let currentDisplayText = display.text!
+            display.text = currentDisplayText + digit
+        } else {
+            display.text = digit
+        }
+        userTyping = true
     }
 }
 
