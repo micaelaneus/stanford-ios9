@@ -18,7 +18,7 @@ class Calculator {
         }
     }
 
-    var operations : Dictionary<String, Operation> = [
+    private var operations : Dictionary<String, Operation> = [
         // Constants
         "π"     : Operation.Constant(M_PI),
         "e"     : Operation.Constant(M_E),
@@ -26,23 +26,22 @@ class Calculator {
         "q"     : Operation.UnaryOperation(sqrt),
         "cos"   : Operation.UnaryOperation(cos),
         // Binary Operations
-        "x"     : Operation.BinaryOperation( { (a, b) in return a*b }),
-        "+"     : Operation.BinaryOperation( { (a, b) in return a + b }),
-        "-"     : Operation.BinaryOperation({ (a, b) in return a - b }),
-        "/"     : Operation.BinaryOperation({ (a, b) in return a/b }),
+        "x"     : Operation.BinaryOperation( { $0 * $1 }),
+        "+"     : Operation.BinaryOperation( { $0 + $1 }),
+        "-"     : Operation.BinaryOperation({ $0 - $1 }),
+        "/"     : Operation.BinaryOperation({ $0 / $1 }),
         // Equality
         "="     : Operation.Equality,
     ]
 
-
-    enum Operation {
+    private enum Operation {
         case Constant(Double)
         case UnaryOperation((Double) -> Double)
         case BinaryOperation((Double, Double) -> Double)
         case Equality
     }
 
-    struct PendingBinaryOperationInfo {
+    private struct PendingBinaryOperationInfo {
         var binaryFunction: (Double, Double)-> Double
         var firstOperand : Double
     }
