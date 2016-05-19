@@ -12,6 +12,7 @@
 		F52DF4041CD054AE00E527A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52DF4021CD054AE00E527A9 /* Main.storyboard */; };
 		F52DF4061CD054AE00E527A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F52DF4051CD054AE00E527A9 /* Assets.xcassets */; };
 		F52DF4091CD054AE00E527A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52DF4071CD054AE00E527A9 /* LaunchScreen.storyboard */; };
+		F5AB796B1CED5DE5000814D6 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AB796A1CED5DE5000814D6 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F52DF4051CD054AE00E527A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F52DF4081CD054AE00E527A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F52DF40A1CD054AE00E527A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5AB796A1CED5DE5000814D6 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				F52DF3FE1CD054AE00E527A9 /* AppDelegate.swift */,
 				F52DF4001CD054AE00E527A9 /* CalculatorViewController.swift */,
 				F52DF4021CD054AE00E527A9 /* Main.storyboard */,
+				F5AB796A1CED5DE5000814D6 /* Calculator.swift */,
 				F52DF4101CD054CA00E527A9 /* Supporting FIles */,
 				F52DF40A1CD054AE00E527A9 /* Info.plist */,
 			);
@@ -146,6 +149,7 @@
 			files = (
 				F52DF4011CD054AE00E527A9 /* CalculatorViewController.swift in Sources */,
 				F52DF3FF1CD054AE00E527A9 /* AppDelegate.swift in Sources */,
+				F5AB796B1CED5DE5000814D6 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +301,7 @@
 				F52DF40F1CD054AE00E527A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
