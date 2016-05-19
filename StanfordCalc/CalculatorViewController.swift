@@ -10,10 +10,9 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
 
+    private var calc = Calculator()
 
-    @IBOutlet weak var display: UILabel!
-
-    private var userTyping = false
+    @IBOutlet private weak var display: UILabel!
 
     var displayValue : Double {
         get {
@@ -24,20 +23,9 @@ class CalculatorViewController: UIViewController {
         }
     }
 
-    @IBAction func performOperation(sender: UIButton) {
-        userTyping = false
-        if let symbol = sender.currentTitle {
-            if symbol == "π" {
-                displayValue = M_PI
-            }
-        } else if let symbol = sender.currentTitle {
-            if symbol == "q" {
-                displayValue = sqrt(displayValue)
-            }
-        } else {}
-    }
+    private var userTyping = false
 
-    @IBAction func touchDigit(sender: UIButton) {
+    @IBAction private func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         if userTyping {
             let currentDisplayText = display.text!
@@ -46,6 +34,17 @@ class CalculatorViewController: UIViewController {
             display.text = digit
         }
         userTyping = true
+    }
+
+    @IBAction private func performOperation(sender: UIButton) {
+        if userTyping {
+            calc.setOperand(displayValue)
+            userTyping = false
+        }
+        if let symbol = sender.currentTitle {
+            calc.performOperation(symbol)
+        }
+        displayValue = calc.result
     }
 }
 
