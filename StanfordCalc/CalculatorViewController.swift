@@ -15,13 +15,26 @@ class CalculatorViewController: UIViewController {
 
     private var userTyping = false
 
+    var displayValue : Double {
+        get {
+            return Double(display.text!)!
+        }
+        set {
+            return display.text = String(newValue)
+        }
+    }
+
     @IBAction func performOperation(sender: UIButton) {
         userTyping = false
         if let symbol = sender.currentTitle {
             if symbol == "π" {
-                display.text = String(M_PI)
+                displayValue = M_PI
             }
-        }
+        } else if let symbol = sender.currentTitle {
+            if symbol == "q" {
+                displayValue = sqrt(displayValue)
+            }
+        } else {}
     }
 
     @IBAction func touchDigit(sender: UIButton) {
